@@ -34,8 +34,7 @@ jobs:
       - name: West Zephyr export
         run: west zephyr-export
       - name: West Build (Sofle Left)
-        run: | 
-          west build -s zmk/app -b nice_nano -- -DSHIELD=sofle_left -DZMK_CONFIG="${GITHUB_WORKSPACE}/config" || echo && echo && ls -laR && cat build/app/build/nice_nano.dts.pre.tmp
+        run: west build -s zmk/app -b nice_nano -- -DSHIELD=sofle_left -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
       - name: Sofle DTS File
         if: ${{ always() }}
         run: cat -n build/zephyr/nice_nano.dts.pre.tmp
@@ -50,7 +49,6 @@ jobs:
           path: sofle_left_nice_nano.uf2
       - name: West Build (Sofle Right)
         run: west build --pristine -s zmk/app -b nice_nano -- -DSHIELD=sofle_right -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
-
       - name: Sofle Right Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
@@ -60,12 +58,3 @@ jobs:
         with:
           name: firmware
           path: sofle_right_nice_nano.uf2
-      # - name: Start SSH via Ngrok
-      #   if: ${{ failure() }}
-      #   run: curl -sL https://gist.githubusercontent.com/retyui/7115bb6acf151351a143ec8f96a7c561/raw/7099b9db76729dc5761da72aa8525f632d8875c9/debug-github-actions.sh | bash
-      #   env:
-      #     NGROK_TOKEN: ${{ secrets.NGROK_TOKEN }}
-      #     USER_PASS: ${{ secrets.SSH_PASS }}
-      # - name: Don't kill instace
-      #   if: ${{ failure() }}
-      #   run: sleep 1h # Prevent to killing instance after failure
