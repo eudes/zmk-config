@@ -11,16 +11,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Start SSH via Ngrok
-        if: ${{ failure() }}
-        uses: luchihoratiu/debug-via-ssh@main
-        with:
-          NGROK_AUTH_TOKEN: ${{ secrets.NGROK_TOKEN }}
-          SSH_PASS: ${{ secrets.SSH_PASS }}
-      - name: Don't kill instace
-        if: ${{ failure() }}
-        run: sleep 1h # Prevent to killing instance after failure
-        
       - name: Cache west modules
         uses: actions/cache@v2
         env:
@@ -70,3 +60,12 @@ jobs:
         with:
           name: firmware
           path: sofle_right_nice_nano.uf2
+      - name: Start SSH via Ngrok
+        if: ${{ failure() }}
+        uses: luchihoratiu/debug-via-ssh@main
+        with:
+          NGROK_AUTH_TOKEN: ${{ secrets.NGROK_TOKEN }}
+          SSH_PASS: ${{ secrets.SSH_PASS }}
+      - name: Don't kill instace
+        if: ${{ failure() }}
+        run: sleep 1h # Prevent to killing instance after failure
