@@ -18,12 +18,14 @@
             timeout-ms = <1000>;
             key-positions = <0 55>;
             bindings = <&tog LOWER>;
+            slow-release = true;
       };
       
       combo_raise {
             timeout-ms = <1000>;
             key-positions = <0 56>;
             bindings = <&tog RAISE>;
+            slow-release = true;
       };
   };
   
