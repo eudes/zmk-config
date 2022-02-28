@@ -36,10 +36,10 @@
         default_layer {
 
             bindings = <
-&kp ESC     &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                                   &kp N6    &kp N7    &kp N8    &kp N9   &kp N0   &kp SLASH
+&kp ESC     &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                                   &kp N6    &kp N7    &kp N8    &kp N9   &kp N0   &kp EQUAL
 &kp TAB     &kp Q  &kp W    &kp E    &kp R     &kp T                                    &kp Y     &kp U     &kp I     &kp O    &kp P    &kp BSPC
 &kp LSHFT   &kp A  &kp S    &kp D    &kp F     &kp G                                    &kp H     &kp J     &kp K     &kp L    &kp SEMI &kp SINGLE_QUOTE
-&kp BACKSLASH   &kp Z  &kp X    &kp C    &kp V     &kp B   &kp C_MUTE       &kp K_MUTE2 &kp N     &kp M     &kp COMMA &kp DOT  &kp MINUS &kp EQUAL
+&kp BACKSLASH   &kp Z  &kp X    &kp C    &kp V     &kp B   &kp C_MUTE       &kp K_MUTE2 &kp N     &kp M     &kp COMMA &kp DOT  &kp MINUS &kp SLASH
                    &kp LCTRL &kp LALT &kp LGUI &lt RAISE RET &mo LOWER      &mo RAISE  &lt LOWER SPACE &kp RALT &kp RCTRL &kp RGUI
             >;
 
@@ -67,9 +67,9 @@
 
             bindings = <
 &to DEFAULT &kp F1  &kp F2    &kp F3      &kp F4    &kp F5                                     &kp F6    &kp F7   &kp F8   &kp F9    &kp F10   &kp F11
-&trans    &kp N1    &kp N2    &kp N3      &kp N4    &kp N5                                     &kp N6    &kp N7   &kp N8   &kp N9    &kp N0    &kp F12
-&trans    &kp EQUAL &kp AT    &kp LT      &kp GT    &kp PRCNT                                  &kp AMPS  &kp LPAR &kp RPAR &kp LBKT  &kp RBKT  &kp PIPE
-&trans &kp EXCLAMATION &kp MINUS &kp KP_PLUS &kp ASTERISK  &kp SLASH  &trans         &trans    &kp GRAVE &kp LBRC &kp RBRC &kp COLON &kp BSLH  &trans
+&trans    &kp N1    &kp N2    &kp N3      &kp N4    &kp N5                                     &kp AMPS  &kp LBRC &kp RBRC  &kp BSLH  &kp PRCNT  &kp F12
+&trans    &kp EXCL  &kp EXCL  &kp LT      &kp GT    &kp PRCNT                                  &kp GRAVE &kp LPAR &kp RPAR  &kp SLASH &kp ASTERISK  &trans 
+&trans &kp EXCLAMATION &kp MINUS &kp KP_PLUS &kp ASTERISK  &kp SLASH  &trans         &trans    &kp DLLR  &kp LBKT &kp RBKT  &kp PIPE  &kp KP_PLUS &trans
                     &trans    &trans      &trans    &trans            &trans         &trans    &trans    &trans   &trans    &trans
             >;
 
